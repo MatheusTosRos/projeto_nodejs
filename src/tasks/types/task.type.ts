@@ -4,7 +4,7 @@ export interface TaskType{
     dataInicial: Date
     dataFinal: Date
     tipo: String
-    categoria: String
     status: String
+    categoria: String
     usuario: String
 }

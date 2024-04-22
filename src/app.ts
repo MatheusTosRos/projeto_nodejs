@@ -1,33 +1,33 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import {routes} from './routes'
+import express from 'express';
+import mongoose from 'mongoose';
+import { routes } from './routes';
 
-class App{
-    public express: express.Application
+class App {
+    public express: express.Application;
 
-    constructor(){
-        this.express = express()
-        this.middleware()
-        this.database
-        this.routes
+    constructor() {
+        this.express = express();
+        this.middleware();
+        this.database();
+        this.setupRoutes(); 
     }
 
-    public middleware(){
-        this.express.use(express.json())
+    public middleware() {
+        this.express.use(express.json());
     }
 
-    public async database(){
+    public async database() {
         try {
-            await mongoose.connect('mongodb://127.0.0.1:27017/tarefas-api')
-            console.log("Sucesso ao conectar-se com o banco de dados")
+            await mongoose.connect('mongodb://127.0.0.1:27017/tarefas-api');
+            console.log("Sucesso ao conectar-se com o banco de dados");
         } catch (error) {
-            console.error("Falha ao conectar-se com o banco de dados/ error: ", error)
+            console.error("Falha ao conectar-se com o banco de dados/ error: ", error);
         }
     }
 
-    public routes(){
-        this.express.use(routes)
+    public setupRoutes() { 
+        this.express.use(routes);
     }
 }
 
-export default new App().express
+export default new App().express;

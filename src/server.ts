@@ -1,10 +1,8 @@
 import app from "./app";
 
-const porta = 3000
-
 function main() {
-    app.listen(porta, 'localhost', () =>{
-        console.log("Servidor rodando ma porta", porta)
+    app.listen(3000,'localhost', () =>{
+        console.log("Servidor rodando na porta", 3000)
     })
 }
 

@@ -24,8 +24,8 @@ class TaskService {
             dataInicial: task.dataInicial,
             dataFinal: task.dataFinal,
             tipo: task.tipo,
-            categoria: task.categoria,
             status: task.status,
+            categoria: task.categoria,
             usuario: task.usuario,
         })
     }
@@ -33,11 +33,12 @@ class TaskService {
     async deleteById(id: string) {
         try {
             await taskSchema.findByIdAndDelete(id)
-            return "Task Removida"
+            return "Tarefa Removida"
         } catch (error) {
-            throw new Error("Erro ao remover a task: " + error)
+            throw new Error("Erro ao remover a tarefa: " + error)
         }
     }
+
 }
 
 export default new TaskService()
