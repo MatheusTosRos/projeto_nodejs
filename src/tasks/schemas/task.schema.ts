@@ -7,7 +7,7 @@ const taskSchema = new Schema({
     dataInicial: Date,
     dataFinal: Date,
     tipo: String,
-    status: {type: String, TaskStatus},
+    status: {type:String , TaskStatus},
     categoria: { type: Schema.Types.ObjectId, ref: 'Category' },
     usuario: { type: Schema.Types.ObjectId, ref: 'User' },
 }, { timestamps: true });

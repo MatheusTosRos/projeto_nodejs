@@ -29,7 +29,41 @@ class TaskController {
         return res.json(deletedTask)
     }
 
-    
+    async findUserById(req: Request, res: Response) {
+        try {
+            const userTasks = await taskService.findUserById(req.params.id)
+            return res.status(200).json(userTasks)
+        } catch (error) {
+            return res.status(400).json(error)
+        }
+    }
+
+    async findPendente(req: Request, res: Response) {
+        try {
+            const tasksPendente = await taskService.findPendente()
+            return res.status(200).json(tasksPendente)
+        } catch (error) {
+            return res.status(400).json(error)
+        }
+    }
+
+    async findInProgresso(req: Request, res: Response) {
+        try {
+            const tasksInProgresso = await taskService.findInProgresso()
+            return res.status(200).json(tasksInProgresso)
+        } catch (error) {
+            return res.status(400).json(error)
+        }
+    }
+
+    async findCompleta(req: Request, res: Response) {
+        try {
+            const tasksCompleta = await taskService.findCompleta()
+            return res.status(200).json(tasksCompleta)
+        } catch (error) {
+            return res.status(400).json(error)
+        }
+    }
 }
 
 export default new TaskController()

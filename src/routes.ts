@@ -27,6 +27,10 @@ routes.delete("/categorys/:id", categoryController.deleteById);
 
 // ROTAS ADICIONAIS
 
+routes.get('/usersTasks/:id', taskController.findUserById)
+routes.get('/taskPendente', taskController.findPendente)
+routes.get('/taskProgresso', taskController.findInProgresso)
+routes.get('/taskCompleta', taskController.findCompleta)
 
 export{
     routes

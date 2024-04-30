@@ -39,7 +39,21 @@ class TaskService {
         }
     }
 
+    async findUserById(id: string) {
+        return await taskSchema.find({ usuarioID: id })
+    }
 
+    async findPendente() {
+        return await taskSchema.find({ status: 'Pendente' })
+    }
+
+    async findInProgresso() {
+        return await taskSchema.find({ status: 'Progresso' })
+    }
+
+    async findCompleta() {
+        return await taskSchema.find({ status: 'Completa' })
+    }
 
 }
 
