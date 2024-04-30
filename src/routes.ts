@@ -25,13 +25,8 @@ routes.delete("/tasks/:id", taskController.deleteById);
 routes.delete("/users/:id", userController.deleteById);
 routes.delete("/categorys/:id", categoryController.deleteById);
 
-//ROTAS DE FILTROS
+// ROTAS ADICIONAIS
 
-/*app.get('/tasks/:category', (req, res) => {
-    const category = req.params.category;
-    const filteredTasks = tasks.filter(task => task.category.name === category);
-    res.json(filteredTasks);
-}); */
 
 export{
     routes

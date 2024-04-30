@@ -28,6 +28,8 @@ class TaskController {
         const deletedTask = await taskService.deleteById(req.params.id)
         return res.json(deletedTask)
     }
+
+    
 }
 
 export default new TaskController()
