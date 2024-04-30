@@ -9,7 +9,7 @@ const taskSchema = new Schema({
     tipo: String,
     status: {type:String , TaskStatus},
     categoria: { type: Schema.Types.ObjectId, ref: 'Category' },
-    usuario: { type: Schema.Types.ObjectId, ref: 'User' },
+    usuario: {type: String, required: true},
 }, { timestamps: true });
 
 export default model("Task", taskSchema)    
