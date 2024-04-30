@@ -26,7 +26,7 @@ routes.delete("/users/:id", userController.deleteById);
 routes.delete("/categorys/:id", categoryController.deleteById);
 
 // ROTAS ADICIONAIS
-
+// routes.get('categoryTasks/id', taskController.findTaskByCategory)  NÃO FUNCIONANDO
 routes.get('/usersTasks/:id', taskController.findUserById)
 routes.get('/taskPendente', taskController.findPendente)
 routes.get('/taskProgresso', taskController.findInProgresso)
